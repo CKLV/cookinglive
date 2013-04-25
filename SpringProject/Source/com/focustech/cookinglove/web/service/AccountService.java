@@ -16,6 +16,7 @@ public class AccountService{
 	
 	/**
 	 * 插入用户账号信息
+	 * @author sweed0
 	 * @param coreLogonInfo
 	 */
 	public void addUser(CoreLogonInfo coreLogonInfo){
