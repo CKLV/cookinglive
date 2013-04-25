@@ -12,7 +12,7 @@ import org.apache.commons.lang.StringUtils;
 /**
  * AuthModel.java
  * 
- * @author xiajinming
+ * @author sweed0
  */
 public class AuthModel {
 	private String regex;
