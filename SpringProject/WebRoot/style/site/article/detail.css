@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+/**详细页*/
+.article_bg{background: url("/images/article/bg_repeat.jpg");}
+.article_footer{height:110px;background:url("/images/article/bg_repeat_footer.jpg");padding: 35px;}
+.article_title{margin-top: 20px;text-align: center;font-size: 25px;}
+.article_content{margin:30px;line-height: 25px}
+.article_clicknum{font-size:12px;text-align: center;margin-top: 5px;}

@@ -1,0 +1,142 @@
+#set($layout = "vo.html")
+
+#define($title)
+    <title>cookinglove</title>
+#end
+
+#define($meta)
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link href="/style/site/common/header-footer.css" rel="stylesheet" type="text/css" />
+    <link href="/style/site/vo/tourism/list.css" rel="stylesheet" type="text/css" />
+    <link href="/plug/ueditor/themes/default/ueditor.css" rel="stylesheet" type="text/css"/>
+#end
+
+#define($js)	
+	<script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="/jquery/additional-methods.js"></script>
+    <script type="text/javascript" src="/jquery/tools/cool-pop/tinybox.js"></script>
+    <script type="text/javascript" src="/jquery/site/vo/tourism/list.js"></script>
+    <script type="text/javascript" src="/plug/ueditor/editor_config.js"></script>
+    <script type="text/javascript" src="/plug/ueditor/editor_all.js"></script>
+#end
+
+<div class="main">
+	<div class="right border">
+		<div  class="menu_title">
+			<span>相册管理</span>
+			<span class="float_right">添加新相册</span>
+		</div>
+		<div class="content">
+			<div class="photo_list">
+				
+				<a href="/tourism/detail/1.html"><img alt="" src="/images/test/photo.jpg" name="tourism_name"></a>
+				<span>相册标题</span>
+				<div class="modify">
+					<span><img src="/images/del.png" name="modifyPhoto" alt="删除相册" title="删除相册"/> <img src="/images/modify.png" name="modifyPhoto"  alt="修改相册" title="修改相册"/></span>
+				</div>
+			</div>
+			<div class="photo_list">
+				
+				<a href="/tourism/detail/1.html"><img alt="" src="/images/test/photo.jpg" name="tourism_name"></a>
+				<span>相册标题</span>
+				<div class="modify">
+					<span><img src="/images/del.png" name="modifyPhoto"  alt="删除相册" title="删除相册"/> <img src="/images/modify.png" name="modifyPhoto"  alt="修改相册" title="修改相册"/></span>
+				</div>
+			</div>
+			<div class="photo_list">
+				
+				<a href="/tourism/detail/1.html"><img alt="" src="/images/test/photo.jpg" name="tourism_name"></a>
+				<span>相册标题</span>
+				<div class="modify">
+					<span><img src="/images/del.png" name="modifyPhoto"  alt="删除相册" title="删除相册"/> <img src="/images/modify.png" name="modifyPhoto"  alt="修改相册" title="修改相册"/></span>
+				</div>
+			</div>
+			<div class="photo_list">
+				
+				<a href="/tourism/detail/1.html"><img alt="" src="/images/test/photo.jpg" name="tourism_name"></a>
+				<span>相册标题</span>
+				<div class="modify">
+					<span><img src="/images/del.png" name="modifyPhoto"  alt="删除相册" title="删除相册"/> <img src="/images/modify.png" name="modifyPhoto"  alt="修改相册" title="修改相册"/></span>
+				</div>
+			</div>
+			<div class="photo_list">
+				
+				<a href="/tourism/detail/1.html"><img alt="" src="/images/test/photo.jpg" name="tourism_name"></a>
+				<span>相册标题</span>
+				<div class="modify">
+					<span><img src="/images/del.png" name="modifyPhoto"  alt="删除相册" title="删除相册"/> <img src="/images/modify.png" name="modifyPhoto"  alt="修改相册" title="修改相册"/></span>
+				</div>
+			</div>
+			<div class="photo_list">
+				
+				<a href="/tourism/detail/1.html"><img alt="" src="/images/test/photo.jpg" name="tourism_name"></a>
+				<span>相册标题</span>
+				<div class="modify">
+					<span><img src="/images/del.png" name="modifyPhoto"  alt="删除相册" title="删除相册"/> <img src="/images/modify.png" name="modifyPhoto"  alt="修改相册" title="修改相册"/></span>
+				</div>
+			</div>
+			<div class="photo_list">
+				
+				<a href="/tourism/detail/1.html"><img alt="" src="/images/test/photo.jpg" name="tourism_name"></a>
+				<span>相册标题</span>
+				<div class="modify">
+					<span><img src="/images/del.png" name="modifyPhoto"  alt="删除相册" title="删除相册"/> <img src="/images/modify.png" name="modifyPhoto"  alt="修改相册" title="修改相册"/></span>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="content" style="display: none">
+			<div>新建相册</div>
+			<div>
+				<form>
+					<div>相册名称：<input type="text"/></div>
+					<div>公开程度:<input type="radio" name=""/>公开<input type="radio" name=""/>仅会员可见<input type="radio" name=""/>保密</div>
+					<div>相册分类：
+						<select>
+							<option>生活</option>
+							<option>风景</option>
+							<option>人物</option>
+						</select>
+					</div>
+					<div>相册描述：<p><textarea></textarea></p></div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="left">
+		<div class="left_menu">
+			<div>
+				<div class="menu_title">文章管理</div>
+				<div class="sub_menu">
+					<div>发布文章</div>
+					<div>文章列表</div>
+				</div>
+			</div>
+			<div>
+				<div class="menu_title">相册管理</div>
+				<div class="sub_menu">
+					<div>相册管理</div>
+				</div>
+			</div>
+			<div>
+				<div class="menu_title">个人资料管理</div>
+				<div class="sub_menu">
+					<div>名片管理</div>
+					<div class="sub_menu">
+						<div>个人名片管理</div>
+						<div>联系人名片管理</div>
+					</div>
+					<div>账号管理</div>
+					<div class="sub_menu">
+						<div>密码修该</div>
+						<div>安全设置</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

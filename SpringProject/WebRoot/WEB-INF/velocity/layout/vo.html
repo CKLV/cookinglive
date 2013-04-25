@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+$!title
+
+$!meta
+
+</head>
+<body>
+#parse("common/vo/_header.html")
+
+<div class="main">
+	<div class="right border">
+		$!screen_content
+	</div>
+	<div class="left">
+		<div class="left_menu">
+			<div>
+				<div class="menu_title">文章管理</div>
+				<div class="sub_menu">
+					<div id="article_add"><a href="/vo/article/add.html">发布文章</a></div>
+					<div id="article_list"><a href="/vo/article/list.html">文章列表</a></div>
+				</div>
+			</div>
+			<div>
+				<div class="menu_title">相册管理</div>
+				<div class="sub_menu">
+					<div id="tourism_add">新建相册</div>
+					<div id="tourism_list">相册管理</div>
+				</div>
+			</div>
+			<div>
+				<div class="menu_title">个人资料管理</div>
+				<div class="sub_menu">
+					<div>名片管理</div>
+					<div class="sub_menu">
+						<div>个人名片管理</div>
+						<div>联系人名片管理</div>
+					</div>
+					<div>账号管理</div>
+					<div class="sub_menu">
+						<div>密码修该</div>
+						<div>安全设置</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+#parse("common/vo/_footer.html")
+$!js
+
+<script type="text/javascript">
+	var id=$("input:hidden[name='menu']").val();
+	$("#"+id).addClass("select");
+</script>
+</body>
+</html>

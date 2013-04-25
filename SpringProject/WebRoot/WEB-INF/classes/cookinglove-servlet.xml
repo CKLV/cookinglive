@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<bean id="authFilter" class="com.focustech.cookinglove.filter.AuthFilter"/>
+	<bean id="securityFilter" class="com.focustech.cookinglove.filter.SecurityFilter" init-method="init">
+		<property name="loginUrl" value="/account/login.html"></property>
+		<property name="nopermitUrl" value="/account/nopermit.html"></property>
+	</bean>
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+	<!-- 配置拦截器 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="securityFilter"/>
+			</list>
+		</property>
+	</bean>
+		
+	<!-- 扫描controller包，是使用spring注解的类生效 -->
+	<context:component-scan base-package="com.focustech.cookinglove.web.controller"></context:component-scan>
+	<!-- 配置试图解析器 -->
+	<!-- 
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:viewClass="org.springframework.web.servlet.view.JstlView"
+		p:prefix="/WEB-INF/jsp"
+		p:suffix=".jsp"/>
+		 -->
+	<!-- 配置velocity -->
+	<!-- 1. 配置velocity引擎 -->
+	<bean id="velocityConfigurer"  class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+	  <!-- 告知Velocity到哪里去寻找它的模板
+		<property name="resourceLoaderPath">
+			<value>WEB-INF/velocity/</value>
+		</property>
+		还可以通过velocityProperties属性来设置其他velocity的配置细节
+		<property name="velocityProperties">
+			<props>
+			     将默认的循环计数器由$velocityCount改为$loopCounter 
+				<prop key="directive.foreach.counter.name">loopCounter</prop>
+				将默认的由1开始计数改为由0开始计数 
+				<prop key="directive.foreach.counter.initial.value">0</prop>
+			</props>
+		</property>
+		-->
+		<property name="resourceLoaderPath">
+			<value>WEB-INF/velocity/</value>
+		</property>
+		<!-- 也可以通过配置文件进行配置 -->
+		<property name="configLocation" value="/WEB-INF/velocity.properties">
+		</property>
+	</bean>
+	<!-- 2. 配置试图解析器 -->
+	<!-- view resolver -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1"></property>
+		<property name="defaultContentType" value="text/html" />
+		<property name="ignoreAcceptHeader" value="true" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+		<property name="viewResolvers">
+			<list>
+				<bean class="com.cookinglove.view.VelocityLayoutViewResolver">
+					<property name="contentType" value="text/html;charset=UTF-8" />
+			        <property name="suffix" value=".html"/>
+					<property name="toolboxConfigLocation" value="/WEB-INF/tools.xml" />
+					<property name="viewClass" value="com.cookinglove.view.VelocityLayoutView" />
+				</bean>
+			</list>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean class="com.cookinglove.view.MappingJacksonJsonView">
+				</bean>
+				<bean class="com.cookinglove.view.ImageView">
+					<constructor-arg name="contentType" value="image/jpeg"></constructor-arg>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

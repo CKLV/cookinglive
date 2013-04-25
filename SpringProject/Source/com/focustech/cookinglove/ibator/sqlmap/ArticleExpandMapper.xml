@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.focustech.cookinglove.ibator.mapper.ArticleMapper">
+  <resultMap id="ResultMapWithAll" extends="BaseResultMap" type="com.focustech.cookinglove.defined.domain.ArticleDefinedDomain">
+  	<result column="log_username" jdbcType="VARCHAR" property="user.logUsername"/>
+  	<result column="nick_name" jdbcType="VARCHAR" property="user.nickName"/>
+  	<result column="init_num" jdbcType="INTEGER" property="initNum"/>
+  	<result column="clickNum" jdbcType="INTEGER" property="clickNum"/>
+  </resultMap>
+  <!-- Base_Column_List  -->
+  <select id="selectArticleList" parameterType="map" resultMap="ResultMapWithAll">
+  	select 
+  	 	article.article_id, article.user_id, article.article_title, article.seo_title, article.seo_keyword, 
+  	 	article.seo_desc, article.tag, article.article_type,article.author, article.source_from, 
+  	 	article.source_url, article.anonymity_flag, article.publish_status, article.check_status, 
+  	 	article.view_popedom,article.comment_popedom, article.publish_time, article.update_time, 
+  	 	article.check_time, article.checker_name, article.updater_name,article.adder_name,
+  	 	logon.log_username,logon.nick_name,click.init_num,click.click_num
+	from  article 
+          left join core_logon_info logon on (article.user_id=logon.user_id) 
+          left join click_num click on (click.object_type='1' and click.object_id=article.article_id)
+    where article.check_status=1 and  logon.user_status='1'
+    order by update_time desc,publish_time desc       
+    limit #{recordStart},#{pageSize}
+  </select>
+</mapper>

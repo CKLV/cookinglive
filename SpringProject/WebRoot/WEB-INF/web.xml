@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>cooking</param-value>
+	</context-param>
+	<!-- -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:/log/log4jTest.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>60000</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/applicationContext.xml</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>encodeFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodeFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>encodeFilter</filter-name>
+		<url-pattern>*.json</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>authFilter</filter-name>
+		<filter-class>com.focustech.cookinglove.filter.AuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>*.json</url-pattern>
+	</filter-mapping>
+
+	<!-- 自定义ip过滤 
+	<filter>
+		<filter-name>ipfIter</filter-name>
+		<filter-class>ipf.ipfiIter</filter-class>
+		<init-param>
+			<param-name>RejectedlP</param-name>
+			<param-value>192.168.12.*</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>ipfiIter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+-->
+	<!-- 添加spring security -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>*.(html|json)</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>cookinglove</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:/cookinglove-servlet.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cookinglove</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/plug/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/images/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/style/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/upload/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/jquery/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- 定义LOG4J监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+	<!-- <listener> <listener-class>com.focustech.log4j.Log4jConfigListener</listener-class> 
+		</listener> -->
+	<!-- 定义SPRING监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+
+	<session-config>
+		<!-- 设置会话(Session)过期时间，其中时间以分钟为单位 -->
+		<session-timeout>360</session-timeout>
+	</session-config>
+	
+	<!-- 自定义servlet -->
+    <servlet>   
+        <servlet-name>advExtract</servlet-name>   
+        <servlet-class>   
+            com.anne.servlet.AdvExtractServlet   
+        </servlet-class>   
+        <init-param>   
+            <param-name>encoding</param-name>   
+            <param-value>UTF-8</param-value>   
+        </init-param>   
+        <load-on-startup>1</load-on-startup>   
+    </servlet>   
+    <servlet-mapping>   
+        <servlet-name>advExtract</servlet-name>   
+        <url-pattern>/ad/</url-pattern>   
+    </servlet-mapping>  
+	<!-- 定义错误页面 -->
+	<error-page>
+	   <error-code>404</error-code>
+	   <location>/access-forbid/error</location>
+	</error-page>
+	
+</web-app>

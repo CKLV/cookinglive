@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+/**文章列表页*/
+.list{border: 1px solid #9999cc;margin-bottom: 10px;}
+.list ul{list-style-type:disc; margin-left: 20px;}
+.list ul li{padding: 8px;}
+.list_bg{background-color: #eeeeee}
+.list_title{font-size:20px;background:#F1F5F6;padding: 5px;}
+.page{float: right;margin: 0px 20px 20px;}
+.page a{padding:1px 5px;border:solid 1px #cccccc;}
+.page a:HOVER{padding:1px 5px;border:solid 1px #ee5555;}

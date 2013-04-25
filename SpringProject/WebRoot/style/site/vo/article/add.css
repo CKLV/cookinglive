@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+.left_menu{border: 1px solid #9999cc;margin-bottom: 10px;font-size:13px;}
+.menu_title{background: #F1F5F6;padding: 7px;font-weight: bold;font-size:15px;}
+
+.border{border:#f1f5f6 1px solid}
+
+.form{font-size:13px;padding: 10px;}
+.form input{height:15px;}
+.newline{margin: 5px;}
+.newline span{margin-right: 10px;}
+.tip{font-size: 12px;color: #aaaaaa}
+.ueditor{margin: 5px 0px 15px;}
+.split{border: 1px solid #f1f1f1;margin:10px 0px;}
+.title_label{font-weight: bold; color:#0066CC;margin-top: 15px;}
+.submit{text-align: center;margin-top: 20px;}
+

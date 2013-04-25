@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!--  validation framwork -->
+	<bean id="validationResolver" class="com.focustech.validation.core.impl.ValidatorXmlConfigResolver">
+		<constructor-arg>
+			<value>classpath:/validator/validators.xml</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>classpath:/validator/</value>
+		</constructor-arg>
+	</bean>
+	<bean id="validationContext" class="com.focustech.validation.core.ValidationContext">
+		<constructor-arg>
+			<ref bean="validationResolver"/>
+		</constructor-arg>
+	</bean>
+	<bean id="validationService" class="com.focustech.validation.core.ValidationService" autowire="byName">
+		<constructor-arg>
+			<ref bean="validationContext"/>
+		</constructor-arg>
+	</bean>
+
+</beans>

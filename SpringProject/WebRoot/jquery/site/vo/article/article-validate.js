@@ -1,0 +1,13 @@
+$("#articleForm").validate({
+	rules:{
+		"articleTitle":{
+			required:true
+		},
+		"articleContent":{
+			required:true
+		}
+	},messages:{
+		"articleTitle":"请输入文章标题",
+		"articleContent":"请输入文章内容"
+	}
+});

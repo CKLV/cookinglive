@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+ 
+ 	<!-- 扫描dao包，使使用spring注解的类生效 -->
+ 	<context:component-scan base-package="com.focustech.cookinglove.ibator.mapper"></context:component-scan>
+ 	<!--  扫描domain包， 使使用spring注解的类生效 -->
+ 	<context:component-scan base-package="com.focustech.cookinglove.domain"></context:component-scan>
+    <!-- 扫描service包，让使用spring注解的类生效 -->
+    <context:component-scan base-package="com.focustech.cookinglove.web.service"></context:component-scan>
+
+</beans>

@@ -1,0 +1,38 @@
+#set($layout = "front_show.html")
+
+#define($title)
+    <title>cookinglove</title>
+#end
+
+#define($meta)
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link href="/style/site/common/header-footer.css" rel="stylesheet" type="text/css" />
+#end
+
+#define($js)
+	<script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="/jquery/additional-methods.js"></script>
+    <script type="text/javascript" src="/jquery/tools/cool-pop/tinybox.js"></script>
+    <script type="text/javascript" src="/jquery/site/account/login.js"></script>
+#end
+
+
+	<div class="main">
+		<div class="loginBox" style="text-align: center;padding: 20px;">
+			<form action="/account/log.json" method="post" id="form">
+				<div class="entry">
+					<span>用户名:&nbsp;</span><input type="text" name="logUsername"/>
+				</div>
+				<div class="entry">
+					<span>密&nbsp;&nbsp;码:&nbsp;</span><input type="text" name="logPassword">
+				</div>
+				<div class="entry">
+					<input type="submit" value="登录"/>
+				</div>		
+			</form>
+		</div>
+	</div>

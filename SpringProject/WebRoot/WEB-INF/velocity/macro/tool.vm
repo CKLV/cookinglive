@@ -1,0 +1,17 @@
+#macro(sayHello $nickName)
+ 	#set($hour=$math.toInteger($date.get("H")))
+ 	
+ 	#if($hour >= 22)
+ 		<strong >$nickName</strong><span>深夜了，该休息了！</span>
+ 	#elseif($hour >= 18)
+ 		<strong>$nickName</strong><span>下班后好好放松吧</span>
+ 	#elseif($hour >= 13)
+ 		<strong>$nickName</strong><span>来杯咖啡提提神！</span>
+ 	#elseif($hour >= 12)
+ 		<strong>$nickName</strong><span>该吃午饭了！</span>
+ 	#elseif($hour >= 6)
+ 		<strong>$nickName</strong><span>美好一天从现在开始！</span>
+ 	#else
+ 		<strong>$nickName</strong><span>熬夜不是好习惯o！</span>
+ 	#end
+#end

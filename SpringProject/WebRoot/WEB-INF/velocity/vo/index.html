@@ -1,0 +1,49 @@
+#set($layout = "vo.html")
+
+#define($title)
+    <title>cookinglove</title>
+#end
+
+#define($meta)
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link href="/style/site/common/header-footer.css" rel="stylesheet" type="text/css" />
+    <link href="/style/site/vo/index.css" rel="stylesheet" type="text/css" />
+    <link href="/plug/ueditor/themes/default/ueditor.css" rel="stylesheet" type="text/css"/>
+#end
+
+#define($js)	
+	<script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="/jquery/additional-methods.js"></script>
+    <script type="text/javascript" src="/jquery/tools/cool-pop/tinybox.js"></script>
+    <script type="text/javascript" src="/jquery/site/vo/index.js"></script>
+#end
+
+<div  class="menu_title">
+			<span>公告</span>
+		</div>
+		<div class="content">
+			<ul>
+				<li>aaa</li>
+			</ul>
+		</div>
+		<div  class="menu_title">
+			<span>会员信息</span>
+		</div>
+		<div class="content">
+			<ul>
+				<li>
+					<span>会员类型：</span>
+					<span class="check_pass">普通会员</span></li>
+				<li>
+					<span>会员状态：</span>
+						#if("$!user.status" eq '1')
+							<span class="check_pass">审核通过</span>
+						#else
+							<span class="check_faild">审核未通过</span>
+						#end
+				</li>
+			</ul>
+		</div>

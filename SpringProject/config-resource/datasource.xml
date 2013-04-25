@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd">
+    
+    <!-- 定义数据源 -->
+    <jee:jndi-lookup id="cookingloveDataSource" jndi-name="java:comp/env/cookinglove/DataSource" />
+	
+	<!-- 配置基于数据源的事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="cookingloveDataSource"></property>
+	</bean>
+	
+	<!-- 配置ibatis -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="cookingloveDataSource"></property>
+		<!-- 扫描下面的所有mapper，自动绑定 -->
+		<property name="typeAliasesPackage" value="com.focustech.cookinglove.ibator.domain"></property>
+		<!-- 扫描下面的mapper.xml文件 -->
+		<property name="mapperLocations" value="classpath*:com/focustech/cookinglove/ibator/sqlmap/*Mapper.xml" /> 
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.focustech.cookinglove.ibator.mapper"></property>
+	</bean>
+</beans>
+

@@ -1,0 +1,62 @@
+#set($layout = "vo.html")
+
+#define($title)
+    <title>cookinglove</title>
+#end
+
+#define($meta)
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link href="/style/site/common/header-footer.css" rel="stylesheet" type="text/css" />
+    <link href="/style/site/vo/article/list.css" rel="stylesheet" type="text/css" />
+    <link href="/plug/ueditor/themes/default/ueditor.css" rel="stylesheet" type="text/css"/>
+#end
+
+#define($js)	
+	<script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="/jquery/additional-methods.js"></script>
+    <script type="text/javascript" src="/jquery/tools/cool-pop/tinybox.js"></script>
+    <script type="text/javascript" src="/jquery/site/index.js"></script>
+    <script type="text/javascript" src="/plug/ueditor/editor_config.js"></script>
+    <script type="text/javascript" src="/plug/ueditor/editor_all.js"></script>
+#end
+
+<input type="hidden" name="menu" value="article_list"/>
+
+		<div  class="menu_title">
+			<span>文章列表</span>
+		</div>
+		<div class="content">
+			<table style="width: 100%" class="t1">
+				<col width="5%"/>
+				<col width="10%"/>
+				<col width="25%"/>
+				<col width="13%"/>
+				<col width="13%"/>
+				<col width="13%"/>
+				<col width="21%"/>
+								<tr>
+					<th><input type="checkbox"/></th>
+					<th>序号</th>
+					<th>文章标题</th>
+					<th>状态</th>
+					<th>发布日期</th>
+					<th>更新日期</th>
+					<th>操作</th>
+				</tr>
+				#foreach ($article inn $articleList)
+				<tr>
+					<td><input type="checkbox" value="${article.articleId}"/></td>
+					<td><a href="/article/detail/${article.articleId}.html" target="_blank">${article.articleId}</a></td>
+					<td><a href="/article/detail/${article.articleId}.html" target="_blank">${article.articleTitle}<a></td>
+					<td>${article.checkStatus}</td>
+					<td>$!date.format('yyyy-M-d',$article.publishTime)</td>
+					<td>$!date.format('yyyy-M-d',$article.updateTime)</td>
+					<td><a>修改</a><a> 审核</a><a> 删除</a></td>
+				</tr>
+				#end
+			</table>
+		</div>
+

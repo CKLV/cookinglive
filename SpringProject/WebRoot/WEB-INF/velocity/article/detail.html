@@ -1,0 +1,87 @@
+#set($layout="front_show.html")
+
+#define($title)
+    <title>cookinglove</title>
+#end
+
+#define($meta)
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link href="/style/site/article/detail.css" rel="stylesheet" type="text/css" />
+    <link href="/style/site/common/header-footer.css" rel="stylesheet" type="text/css" />
+#end
+
+#define($js)	
+	<script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="/jquery/additional-methods.js"></script>
+    <script type="text/javascript" src="/jquery/tools/cool-pop/tinybox.js"></script>
+    <script type="text/javascript" src="/jquery/site/index.js"></script>
+#end
+
+<div class="main" >
+	<div class="right article_bg">
+	    <div class="article_title">
+	    	$!{article.articleTitle}
+	    </div>
+	    <div class="article_clicknum">
+	    	发布时间：$!date.format('yyyy-M-d',$article.publishTime) 点击量:120
+	    </div>
+	    <div class="article_content">
+			$!article.articleContent
+	    </div>
+		<div class="article_footer">
+			<ul>
+				<li><strong>作者：</strong><span>cookinglove</span></li>
+				<li><strong>来源：</strong><span>cookinglove</span></li>
+				<li><strong>标签：</strong><span>钓鱼岛</span></li>
+			</ul>
+		</div>		
+	</div>
+	<div class="left">
+		<div class="loginBox">
+			<div>
+				<div class="title">
+					<span>相关阅读</span>
+				</div>
+				<div>
+					<ul>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态钓鱼岛</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态钓鱼岛</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="loginBox">
+			<div>
+				<div class="title">
+					<span>热门文章</span>
+				</div>
+				<div>
+					<ul>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态钓鱼岛</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态钓鱼岛</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+						<li><a>钓鱼岛最新动态钓鱼岛最新动态</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>

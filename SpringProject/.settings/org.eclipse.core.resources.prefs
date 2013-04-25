@@ -1,0 +1,12 @@
+#Tue Nov 27 20:30:04 CST 2012
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/velocity.properties=UTF-8
+encoding//WebRoot/WEB-INF/velocity/common/ajax/_index_member_info.html=UTF-8
+encoding//WebRoot/WEB-INF/velocity/common/front/_footer.html=UTF-8
+encoding//WebRoot/WEB-INF/velocity/common/front/_header.html=UTF-8
+encoding//WebRoot/WEB-INF/velocity/common/vo/_footer.html=UTF-8
+encoding//WebRoot/WEB-INF/velocity/common/vo/_header.html=UTF-8
+encoding//WebRoot/WEB-INF/velocity/layout/default.html=UTF-8
+encoding//WebRoot/WEB-INF/velocity/layout/front_show.html=UTF-8
+encoding//WebRoot/WEB-INF/velocity/layout/vo.html=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<validators xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<validator class="com.focustech.validation.validator.RequiredValidator" />
+	<validator class="com.focustech.validation.validator.MaxValidator" />
+	<validator class="com.focustech.validation.validator.MinValidator" />
+	<validator class="com.focustech.validation.validator.RangeValidator" />
+	<validator class="com.focustech.validation.validator.RangeLengthValidator" />
+	<validator class="com.focustech.validation.validator.MaxLengthValidator" />
+	<validator class="com.focustech.validation.validator.MinLengthValidator" />
+	<validator class="com.focustech.validation.validator.EqualToValidator" />
+	<validator class="com.focustech.validation.validator.NotEqualToValidator" />
+	<validator name="email" class="com.focustech.validation.validator.RegValidator">
+		<property name="reg"><![CDATA[^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$]]></property>
+	</validator>
+	<validator name="url" class="com.focustech.validation.validator.RegValidator">
+		<property name="reg"><![CDATA[^(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$]]></property>
+	</validator>
+	<validator name="digits" class="com.focustech.validation.validator.RegValidator">
+		<property name="reg"><![CDATA[^\d+$]]></property>
+	</validator>
+	<validator name="number" class="com.focustech.validation.validator.RegValidator">
+		<property name="reg"><![CDATA[^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$]]></property>
+	</validator>
+	<!-- 登录名 -->
+	<validator name="loginname" class="com.focustech.validation.validator.RegValidator">
+		<property name="reg"><![CDATA[^[a-zA-Z0-9\-]+$]]></property>
+	</validator>
+	<!-- 电话号码 -->
+	<validator name="phone" class="com.focustech.validation.validator.RegValidator">
+		<property name="reg"><![CDATA[^[0-9\-]+$]]></property>
+	</validator>
+	<!-- 不能纯数字 -->
+	<validator name="notOnlyDigit" class="com.focustech.validation.validator.RegValidator">
+		<property name="reg"><![CDATA[^[\d]+$]]></property>
+		<property name="reverse">true</property>
+	</validator>
+	<!-- 邮编 -->
+	<validator name="zip" class="com.focustech.validation.validator.RegValidator">
+		<property name="reg"><![CDATA[^[0-9A-Za-z]+$]]></property>
+	</validator>
+</validators>

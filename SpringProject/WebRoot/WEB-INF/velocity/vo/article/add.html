@@ -1,0 +1,105 @@
+#set($layout = "vo.html")
+
+#define($title)
+    <title>cookinglove</title>
+#end
+
+#define($meta)
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link href="/style/site/common/header-footer.css" rel="stylesheet" type="text/css" />
+    <link href="/style/site/vo/article/add.css" rel="stylesheet" type="text/css" />
+    <link href="/plug/ueditor/themes/default/ueditor.css" rel="stylesheet" type="text/css"/>
+#end
+
+#define($js)	
+	<script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="/jquery/additional-methods.js"></script>
+    <script type="text/javascript" src="/jquery/site/vo/article/add.js"></script>
+    <script type="text/javascript" src="/jquery/site/vo/article/article-validate.js"></script>
+    <script type="text/javascript" src="/plug/ueditor/editor_config.js"></script>
+    <script type="text/javascript" src="/plug/ueditor/editor_all.js"></script>
+    <script type="text/javascript">
+		var ue=new UE.ui.Editor({});
+		ue.render('article_content');
+	</script>
+#end
+
+<input type="hidden" name="menu" value="article_add"/>
+<form id="articleForm" action="/vo/article/post.html" method="post">
+		<div  class="menu_title">
+			<span>发布文章</span>
+		</div>
+		<div class="form">
+			<div class="title_label">发布文章</div>
+			<div class="split"></div>
+			<div class="newline">
+				<span style="margin-right: 3px;"><label class="must">*</label>文章分类</span>
+				<select style="width: 150px;" name="articleType">
+					<option value="1">感悟</option>
+					<option value="2">游记</option>
+					<option value="3">心情</option>
+					<option value="4">随笔</option>
+				</select>
+				<span>标签</span><input type="text" class="half" name="tag"/>
+				<span class="tip">多个标签之间以“,”分隔</span>
+			</div>
+			<div class="newline">
+				<span><label class="must">*</label>文章标题</span><input type="text" class="half" name="articleTitle"/>
+				<input type="radio" checked="checked" value="1" name="publishStatus"/>发布<input type="radio" value="0" name="publishStatus""/>暂停
+			</div>
+			<div class="newline">
+				<span ><label class="must">*</label>文章内容</span>
+				<div class="ueditor">
+					<script type="text/plain" id="article_content" name="articleContent">
+						
+					</script>
+				</div>
+			</div>
+			<div class="title_label">
+				<span>文章出处</span>
+			</div>
+			<div class="split"></div>
+			<div class="newline">
+				<input type="radio" value="1" checked="checked" name="sourceFrom"/>原创
+				<input type="radio" value="0" name="sourceFrom"/>转载
+				<span>
+					显示名称：<input type="radio" value="1" name="anonymityFlag"/>匿名<input type="radio" value="0" name="anonymityFlag" checked="checked">昵称<input type="radio" name="anonymityFlag" value="2"/>其他
+					<input type="text" class="half" name="author" disabled="disabled"/>
+				</span>
+				<span style="display: none">
+					转载地址：
+					<input type="text" class="half" name="sourceUrl"/>
+				</span>
+			</div>
+			
+			<div class="title_label">
+				<span>推广代码</span>
+			</div>
+			<div class="split"></div>
+			<div class="newline">
+				<span>SEO title</span><input name="seoTitle" type="text" class="half"/>
+				<span>SEO keyword</span><input type="text" name="seoKeyword"/>
+			</div>
+			<div class="newline">
+				<span>SEO description</span>
+			</div>
+			<div class="newline">
+				<textarea rows="3" cols="80" name="seoDesc"></textarea>			
+			</div>
+			<div class="title_label">
+				<span>访问及评论权限设置</span>
+			</div>
+			<div class="split"></div>
+			<div class="newline">
+				<span><label class="must">*</label>阅读权限</span><input type="text" class="half" name="viewPopedom"/>
+				<span>评论权限</span><input type="checkbox" value="1" name="commentPopedom"/>是否允许评论
+			</div>
+			<div class="submit">
+				<button type="submit">发布</button>
+				<button type="submit">重置</button>
+			</div>
+		</div>
+</form>

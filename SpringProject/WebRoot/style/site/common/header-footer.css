@@ -1,0 +1,81 @@
+@CHARSET "UTF-8";
+/**全局样式*/
+body{width:980px;margin: auto;font-size: 15px}
+label{padding-right: 5px;}
+a{text-decoration: none;color: #000000}
+a:HOVER{text-decoration: none;color: #0000ee;cursor: pointer;}
+a:VISITED{text-decoration: none;color: #000000}
+label.error{color:#ff0000;margin-left: 10px;font-size: 12px}
+div.error_border{color:#ff0000;font-size: 12px;padding:3px 10px;border: 1px solid;}
+
+.sub_menu div{line-height:20px;padding: 5px 0px 5px 20px;}
+
+
+/**页头*/
+.header{height: 80px;}
+.searchBox{float: right;margin: 30px;}
+input.half{width: 220px;height: 20px}
+.half{height: 24px;}
+.clear{clear: both;margin-bottom: 10px;}
+/**页尾*/
+.footer{margin-top: 10px;display: block;text-align: center}
+
+/**导航*/
+.nav{height: 35px;background-color: #9999cc}
+.nav ul{display: block;padding: 8px}
+.nav ul li{list-style-type: none;display: inline;margin-right: 20px;font-size: 16px;}
+
+.nav a{text-decoration: none;color: white;}
+.nav a:HOVER {color: yellow;text-decoration: none}
+
+/**内容*/
+.main{margin-top: 50px;display: block;}
+.left{width:250px;height: 300px;display: inline;float: left}
+.right{display: inline;margin-left: 10px;width: 715px;float: right;}
+.entry{margin:10px 10px }
+.entry a{margin-left: 40px}
+
+.loginBox{border: 1px solid #9999cc;margin-bottom: 10px}
+.loginBox .title{height:24px;background: #F1F5F6;padding: 10px 0px 0px;margin:0px 0px 10px 0px;}
+.loginBox .title span{margin-left: 10px;}
+
+.must{color:red;}
+
+ul{margin-bottom: 10px;padding:0; margin:0px 0px 10px 0px; list-style-type:none;}
+ul li{padding: 2px 10px 2px 10px;font-size: 13px;}
+.clearfix{height:auto;margin-bottom: 0px;}
+.clearfix li{width:335px;float:left;}
+
+/**统一定义表格*/
+table{
+    table-layout:fixed;
+    empty-cells:show; 
+    border-collapse: collapse;
+    margin:0 auto;
+    font-size: 12px;
+}
+td{
+    height:25px;
+    text-align: center;
+}
+
+/*这个是借鉴一个论坛的样式*/
+table.t1{
+    border:1px solid #cad9ea;
+    color:#666;
+}
+table.t1 th {
+    background-image: url(th_bg1.gif);
+    background-repeat::repeat-x;
+    height:30px;
+}
+table.t1 td,table.t1 th{
+    border:1px solid #cad9ea;
+    padding:0 1px 0;
+}
+table.t1 tr.a1{
+    background-color:#f5fafe;
+}
+
+.select{background-color: #9999CC;}
+.select a{color:#ffffff;}

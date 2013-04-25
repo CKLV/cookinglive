@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SpringProject">
+        <wb-resource deploy-path="/" source-path="/WebRoot"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Source"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/config-resource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/velocity-source"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/velocity-tool-source"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web-base"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/validator"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <property name="context-root" value="/SpringProject"/>
+        <property name="java-output-path" value="/SpringProject/WebRoot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>
